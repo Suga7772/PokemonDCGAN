@@ -131,7 +131,7 @@ def main():
         st.session_state.current_image = None
 
     # Button to generate pokemon image
-    if st.button("Generate Pokémon"):
+    if st.button("Generate New Pokémon"):
         st.session_state.current_image = random.choice(image_files) if image_files else None
 
     # displaying the current image
@@ -144,7 +144,7 @@ def main():
         except Exception as e:
             st.error(f"Error loading image {st.session_state.current_image}: {e}")
     else:
-        st.write("Click the button to generate super one of a kind Cool Pokemon!")
+        st.write("Click the button to generate super one of a kind Cool")
 
 if __name__ == "__main__":
     main()
