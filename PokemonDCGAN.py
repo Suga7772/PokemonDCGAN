@@ -3,6 +3,7 @@ from PIL import Image
 import os
 import random
 import torch
+import torch.nn as nn
 
 latent_dim = 128  # latent dimension
 img_channels = 3  # number of image channels
