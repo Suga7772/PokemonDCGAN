@@ -3,8 +3,6 @@ from PIL import Image
 import os
 import random
 import torch
-import numpy as np
-import matplotlib.pyplot as plt
 import torch.nn as nn
 
 latent_dim = 128  # latent dimension
