@@ -1,10 +1,16 @@
 import streamlit as st
+from PIL import Image
+import os
+import random
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
 import torch.nn as nn
 
-# Define the Generator class
+latent_dim = 128  # latent dimension
+img_channels = 3  # number of image channels
+feature_maps = 64  # number of feature maps
+folder_path = "images"  # generating images path
 
 class Generator(nn.Module):
     def __init__(self, latent_dim, img_channels, feature_maps):
@@ -80,20 +86,65 @@ def generate_image(generator, latent_dim, device):
     fake_image = fake_image.squeeze(0).permute(1, 2, 0).numpy()  # Convert to HWC and NumPy
     return fake_image
 
-# Streamlit app
+def get_image_files(folder_path):
+    # Get a list of all image files in the folder
+    return [f for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp'))]
+
+def display_generated_image(folder_path, image_files):
+    if image_files:
+        # Select a random image
+        random_image = random.choice(image_files)
+        image_path = os.path.join(folder_path, random_image)
+        try:
+            image = Image.open(image_path)
+            # stling the position and overall appearance of the image
+            st.markdown(
+                f"""
+                <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+                    <img src="data:image/png;base64,{image_to_base64(image)}" width="64" height="64">
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+        except Exception as e:
+            st.error(f"Error loading image {random_image}: {e}")
+    else:
+        st.write("No images found in the folder.")
+
+def image_to_base64(image):
+    # converting to base64 as guidec in the streamlit documentation for parsing 64x64 images
+    from io import BytesIO
+    import base64
+    buffered = BytesIO()
+    image.save(buffered, format="PNG")
+    return base64.b64encode(buffered.getvalue()).decode()
+
+# app entry point
 def main():
-    st.title("Pokémon Image Generator")
-    st.write("Click the button to generate a new Pokémon image.")
+    st.title("Pokémon DCGAN Generator")
 
-    # Load the generator
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    checkpoint_path = "generator_pokemonDCGAN.pth"  # Path to your generator model
-    generator = load_generator(checkpoint_path, device)
+    # Get the list of image files
+    image_files = display_generated_image(folder_path, get_image_files(folder_path))
 
-    # Button to generate a new image
-    if st.button("Generate New Fakey Pokémon"):
-        fake_image = generate_image(generator, latent_dim=100, device=device)
-        st.image(fake_image, caption="Generated Pokémon", use_column_width=True)
+    # Initializing session state to keep track of the current image
+    if 'current_image' not in st.session_state:
+        st.session_state.current_image = None
+
+    # Button to generate pokemon image
+    if st.button("Generate Pokémon"):
+        st.session_state.current_image = random.choice(image_files) if image_files else None
+
+    # displaying the current image
+    if st.session_state.current_image:
+        image_path = os.path.join(folder_path, st.session_state.current_image)
+        try:
+            image = Image.open(image_path)
+            # Display the image at its native resolution (64x64) without a caption
+            st.image(image, width=64)  # Set width to 64 pixels for clarity
+        except Exception as e:
+            st.error(f"Error loading image {st.session_state.current_image}: {e}")
+    else:
+        st.write("Click the button to generate super one of a kind Cool Pokemon!")
 
 if __name__ == "__main__":
     main()
