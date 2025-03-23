@@ -1,6 +1,6 @@
 <h1 align="center">Pokémon DCGAN Model 🎨⚡</h1>
 
-Welcome to the Pokémon DCGAN (Deep Convolutional Generative Adversarial Network) repository! This project showcases a generative model trained to create new, unique Pokémon-like images using a DCGAN architecture. The model was trained on a dataset of over 29,000 Pokémon images and deployed via Streamlit for real-time image generation. Dive into the world of AI-generated Pokémon and explore how deep learning can bring fictional creatures to life!
+Welcome to the Pokémon DCGAN (Deep Convolutional Generative Adversarial Network) repository! This project showcases a generative model trained to create new, unique Pokémon-like images using a DCGAN architecture. The model was trained on a dataset of over 29,000 Pokémon images and deployed via Streamlit for real-time image generation. Dive into the world of new generated Pokémons and create new imposters to life!
 
 <h2>Generated Pokémon Example  : </h2>
 <div align="center">
