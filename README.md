@@ -90,6 +90,9 @@ The model is deployed using Streamlit, providing a user-friendly interface for r
 
 <h3>Site preview:</h3>
 
+![image](https://github.com/user-attachments/assets/2c4f334b-26fb-44ed-816b-76279880b1ef)
+
+
 <h2>🤝 Contributing</h2>
 <h4>Contributions are welcome! If you'd like to improve this project, please follow these steps:</h4>
 
