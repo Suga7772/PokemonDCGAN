@@ -142,7 +142,7 @@ def main():
         except Exception as e:
             st.error(f"Error loading image {st.session_state.current_image}: {e}")
     else:
-        st.write("Click the button to generate super one of a kind Cool")
+        st.write("Click the button to generate super one of a kind Cool Pokemon!")
 
 if __name__ == "__main__":
     main()
