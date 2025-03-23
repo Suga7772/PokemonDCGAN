@@ -92,6 +92,49 @@ The model is deployed using Streamlit, providing a user-friendly interface for r
 
 ![image](https://github.com/user-attachments/assets/2c4f334b-26fb-44ed-816b-76279880b1ef)
 
+<h2>🛠 Step-by-Step Instructions</h2>
+
+Follow these steps to set up and run the Pokémon DCGAN project:
+
+<h3>1. Clone the Repository</h3>
+
+```bash git clone https://github.com/Suga7772/PokemonDCGAN.git```
+
+```cd PokemonDCGAN```
+
+- Install Requirements
+  
+- Install the necessary dependencies using pip:
+
+```bash pip install -r requirements.txt```
+
+<h3>2. Train the Model (Optional)</h3>
+
+If you want to train the model from scratch, use the following command:
+
+```bash python train.py --dataset path/to/pokemon/dataset --epochs 450 --batch_size 32```
+
+- Replace path/to/pokemon/dataset with the path to your Pokémon dataset.
+
+- The trained model will be saved in the models/ directory.
+
+<h3>3. Generate Pokémon Images</h3>
+
+To generate new Pokémon images using the pre-trained model, run:
+
+```bash python generate.py --model path/to/trained/model --output_dir generated_images```
+
+- Replace path/to/trained/model with the path to your trained model.
+
+- Generated images will be saved in the generated_images/ directory.
+
+<h3>4. Deploy to Streamlit Community Cloud (Optional)</h3>
+
+To share your app publicly:
+
+- Push your code to GitHub.
+
+- Go to Streamlit Community Cloud, log in with your GitHub account, and deploy the app by linking your repository.
 
 <h2>🤝 Contributing</h2>
 <h4>Contributions are welcome! If you'd like to improve this project, please follow these steps:</h4>
