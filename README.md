@@ -85,8 +85,7 @@ The model was trained on a combination of two datasets:
 <h2>🌐 Deployment</h2>
 The model is deployed using Streamlit, providing a user-friendly interface for real-time Pokémon generation. It was done by linking this Github Repository to main branch and associating the runtime file pokedcGan.py caling our saved generator.pth to create one of a kind images
 
-<h2>Live Website</h2>
-<h2>👉 Pokémon DCGAN Streamlit App : https://mahrukhandirsaspokemons.streamlit.app/ </h2>
+<h2>👉 Pokémon DCGAN Live App : https://mahrukhandirsaspokemons.streamlit.app/ </h2>
 <h5>Note: this is a free streamlit application, which goes to sleep due to inactivity, to get it notified to run again, please ping the creater of this repository , Mahrukh Khan at mahkhan.msai24seecs@seecs.edu.pk </h5>
 
 <h3>Site preview:</h3>
@@ -99,9 +98,6 @@ The model is deployed using Streamlit, providing a user-friendly interface for r
 3. Commit your changes (git commit -m 'Add some feature').
 4. Push to the branch (git push origin feature/YourFeature).
 5. Open a pull request.
-
-<h2>📜 License</h2>
-<p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
 
 <h2>🙏 Acknowledgments</h2>
 <p>
