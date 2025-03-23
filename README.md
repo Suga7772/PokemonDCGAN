@@ -154,6 +154,6 @@ To share your app publicly:
 
 - The open-source community for their invaluable contributions.</p>
  ____________________________________________________________________________________________
-<h1 align="center">Happy generating! 🎉✨</h1>
+<h1 align="center">Happy Generating! 🎉✨</h1>
 
 
